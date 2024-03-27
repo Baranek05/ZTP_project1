@@ -18,7 +18,7 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    // Zwraca listę wszystkich produktów z informacjami bazowymi
+    // Zwraca listę wszystkich produktów z podstawowymi informacjami
     public List<ProductDTO> getAllProductsBasicInfo() {
         return productRepository.findAll().stream()
                 .map(this::convertToProductDTO)
@@ -41,8 +41,7 @@ public class ProductService {
         validateProduct(productDetails);
         return productRepository.findByName(name)
                 .map(existingProduct -> {
-                    logChange(existingProduct, productDetails, "Update"); // Logowanie zmian przed aktualizacją produktu
-
+                    logChange(existingProduct, productDetails, "Update");
                     return updateExistingProduct(existingProduct, productDetails);
                 })
                 .orElseThrow(() -> new ResourceNotFoundException("Product with name " + name + " not found"));

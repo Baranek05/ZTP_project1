@@ -43,13 +43,14 @@ public class ProductController {
         return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
     }
 
-    // Usuwa produkt po id
+    // Usuwa produkt po name
     @DeleteMapping("/{name}")
     public ResponseEntity<Void> deleteProduct(@PathVariable String name) {
         productService.deleteProduct(name);
         return ResponseEntity.noContent().build();
     }
 
+    // Pobiera listę zmian
     @GetMapping("/products/{name}/changes")
     public ResponseEntity<List<ChangeHistory>> getProductChangeHistory(@PathVariable String name) {
         return productService.getProductByName(name)
