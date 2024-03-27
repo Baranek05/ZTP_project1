@@ -23,7 +23,6 @@ public class ProductSteps {
     private Product product;
     private Product savedProduct;
     private Exception exception;
-    private List<ChangeHistory> changeHistoryList;
 
     //1
     @Given("the product name is {string}")
