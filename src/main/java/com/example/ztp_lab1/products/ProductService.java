@@ -50,7 +50,6 @@ public class ProductService {
 
     // Aktualizuje dane istniejącego produktu
     private Product updateExistingProduct(Product existingProduct, Product productDetails) {
-        // Teraz, zamiast bezpośredniego ustawiania, można użyć setterów i w nich logować zmiany, jeśli to konieczne
         existingProduct.setName(productDetails.getName());
         existingProduct.setQuantity(productDetails.getQuantity());
         existingProduct.setPrice(productDetails.getPrice());

@@ -1,7 +1,6 @@
 package com.example.ztp_lab1.products;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +14,6 @@ import java.util.List;
 @AllArgsConstructor
 public class ProductController {
     private final ProductService productService;
-
-
     // Pobiera wszystkie produkty
     @GetMapping
     public ResponseEntity<List<ProductDTO>> getAllProducts() {
